@@ -1,0 +1,15 @@
+# Generated stems/audio output — don't commit music files
+sp1_output/
+*.wav
+*.mp3
+*.flac
+*.aiff
+
+# Secrets — never commit API keys
+.env
+*.key
+
+# Python/OS cruft
+__pycache__/
+*.pyc
+.DS_Store
