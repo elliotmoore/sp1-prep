@@ -28,7 +28,7 @@ Output goes into a `sp1_output` folder next to the input file by default. Pass a
 The SP-1 stem loader needs a BPM per song. This script tries, in order:
 
 1. **Online lookup** via the [GetSongBPM API](https://getsongbpm.com/api) (free, requires your own API key), using the song's title/artist tags if present in the file.
-2. **Local estimation** via `librosa`'s beat tracker, if no online match is found. This can be inaccurate (particularly half/double-time errors), so double-check it for songs you know.
+2. **Local audio signature detection**, if no online match is found: `librosa`'s beat tracker analyzes the track's own onset/rhythm signature to estimate tempo directly from the waveform, no tags or internet required. This can be inaccurate (particularly half/double-time errors), so double-check it for songs you know.
 
 To enable the online lookup, get a free API key from [getsongbpm.com/api](https://getsongbpm.com/api) and export it before running:
 
